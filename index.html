@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>أ/ محمد سعيد يونس (الدرعمي) - دروس اللغة العربية للإعدادي والثانوي</title>
+    <meta name="description" content="موقع الحجز الرسمي لأ/ محمد سعيد يونس (الدرعمي) لتدريس اللغة العربية للمرحلتين الإعدادية والثانوية في القلج، الخانكة، والعبور.">
+    <link rel="icon" href="favicon.ico">
+    <!-- Google Fonts: Cairo for body, Amiri for headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #800000;
+            --black: #000;
+            --white: #fff;
+            --transition: 0.3s cubic-bezier(.4,0,.2,1);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: 'Cairo', Arial, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            direction: rtl;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        /* Header & Navbar */
+        header {
+            position: fixed;
+            top: 0; right: 0; left: 0;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(128,0,0,0.07);
+            z-index: 1000;
+            transition: box-shadow var(--transition);
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.7rem 1.5rem;
+        }
+        .logo {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: bold;
+            letter-spacing: 1px;
+            user-select: none;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        nav a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            transition: background var(--transition), color var(--transition);
+        }
+        nav a:hover, nav a.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: var(--primary);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(128,0,0,0.7), rgba(0,0,0,0.5)), url('hero-bg.jpg') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding-top: 90px;
+            position: relative;
+            animation: fadeIn 1.2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .hero-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid var(--primary);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            background: var(--white);
+            box-shadow: 0 4px 24px rgba(128,0,0,0.10);
+            transition: box-shadow var(--transition);
+        }
+        .hero-title {
+            font-family: 'Amiri', serif;
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        }
+        .hero-nickname {
+            font-size: 1.4rem;
+            color: #ffe5e5;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .cta-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            padding: 0.9rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(128,0,0,0.13);
+            transition: background var(--transition), transform var(--transition);
+            position: relative;
+            animation: pulse 1.5s infinite;
+        }
+        .cta-btn:hover {
+            background: var(--black);
+            transform: scale(1.05);
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(128,0,0,0.4);}
+            70% { box-shadow: 0 0 0 15px rgba(128,0,0,0);}
+            100% { box-shadow: 0 0 0 0 rgba(128,0,0,0);}
+        }
+        /* Section Styles */
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 70px 1.5rem 40px 1.5rem;
+            background: var(--white);
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(128,0,0,0.04);
+            margin-top: 2.5rem;
+            animation: fadeIn 1.2s;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+        .section-title i {
+            font-size: 1.3em;
+            color: var(--primary);
+        }
+        /* About */
+        .about-desc {
+            font-size: 1.15rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        /* Why Us */
+        .features {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .feature-card {
+            background: #fff;
+            border: 1.5px solid #eee;
+            border-radius: 14px;
+            padding: 1.5rem 1.2rem;
+            flex: 1 1 210px;
+            min-width: 180px;
+            max-width: 250px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(128,0,0,0.05);
+            transition: box-shadow var(--transition), transform var(--transition);
+            margin-bottom: 1rem;
+        }
+        .feature-card:hover {
+            box-shadow: 0 4px 24px rgba(128,0,0,0.13);
+            transform: translateY(-6px) scale(1.03);
+        }
+        .feature-card i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+            display: block;
+        }
+        .feature-title {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--black);
+            margin-top: 0.5rem;
+        }
+        /* Booking */
+        .booking-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-width: 420px;
+            margin: 0 auto;
+            background: #faf8f8;
+            border-radius: 14px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 2px 12px rgba(128,0,0,0.06);
+            animation: fadeIn 1.2s;
+        }
+        .booking-form label {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-size: 1.07rem;
+        }
+        .booking-form input,
+        .booking-form select {
+            padding: 0.7rem 0.9rem;
+            border: 1.5px solid #ddd;
+            border-radius: 7px;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            transition: border var(--transition);
+            background: #fff;
+        }
+        .booking-form input:focus,
+        .booking-form select:focus {
+            border-color: var(--primary);
+        }
+        .booking-form button {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 0.7rem;
+            transition: background var(--transition), transform var(--transition);
+            animation: pulse 1.5s infinite;
+        }
+        .booking-form button:hover {
+            background: var(--black);
+            transform: scale(1.04);
+        }
+        /* Contact */
+        .socials {
+            display: flex;
+            gap: 1.3rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .socials a {
+            color: var(--primary);
+            font-size: 2.1rem;
+            transition: color var(--transition), transform var(--transition);
+            background: #fff;
+            border-radius: 50%;
+            padding: 0.3em 0.4em;
+            border: 1.5px solid #eee;
+            box-shadow: 0 2px 8px rgba(128,0,0,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .socials a:hover {
+            color: var(--black);
+            transform: scale(1.13);
+            border-color: var(--primary);
+        }
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2.2rem 1rem 1.2rem 1rem;
+            margin-top: 3rem;
+            border-radius: 18px 18px 0 0;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        .footer-logo {
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .footer-tagline {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #ffe5e5;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        .footer-links a {
+            color: #ffe5e5;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: color var(--transition);
+        }
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .copyright {
+            font-size: 0.98rem;
+            color: #f8dada;
+            margin-top: 0.7rem;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            section {
+                padding: 60px 0.7rem 30px 0.7rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .navbar {
+                padding: 0.7rem 0.7rem;
+            }
+            .hero-title { font-size: 2rem; }
+            .hero-img { width: 120px; height: 120px; }
+            .section-title { font-size: 1.4rem; }
+            .feature-card { max-width: 100%; }
+            .booking-form { padding: 1.2rem 0.7rem; }
+        }
+        @media (max-width: 600px) {
+            nav {
+                position: fixed;
+                top: 60px; right: 0;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                width: 220px;
+                height: 0;
+                overflow: hidden;
+                box-shadow: 0 2px 16px rgba(128,0,0,0.08);
+                border-radius: 0 0 0 18px;
+                gap: 0;
+                transition: height var(--transition);
+                z-index: 1001;
+            }
+            nav.open {
+                height: 260px;
+                padding: 1rem 0.7rem;
+                gap: 1.2rem;
+            }
+            nav a {
+                width: 100%;
+                padding: 0.7rem 0.5rem;
+                font-size: 1.1rem;
+            }
+            .hamburger {
+                display: block;
+            }
+            .navbar {
+                flex-direction: row;
+            }
+            section {
+                margin-top: 1.5rem;
+                padding: 45px 0.3rem 20px 0.3rem;
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navbar -->
+    <header>
+        <div class="navbar">
+            <span class="logo">أ/ محمد سعيد يونس</span>
+            <button class="hamburger" aria-label="القائمة" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <a href="#home" class="active">الرئيسية</a>
+                <a href="#about">عن الدرعمي</a>
+                <a href="#why">لماذا نحن</a>
+                <a href="#booking">الحجز</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="mr.jpg" alt="صورة أ/ محمد سعيد يونس" class="hero-img" loading="lazy">
+        <h1 class="hero-title">أ/ محمد سعيد يونس</h1>
+        <div class="hero-nickname">(الدرعمي)</div>
+        <a href="#booking" class="cta-btn" onclick="scrollToSection(event, 'booking')">احجز الآن</a>
+    </section>
+    <!-- About Teacher -->
+    <section id="about">
+        <div class="section-title">
+            <i class="fas fa-user-graduate"></i>
+            عن المدرس
+        </div>
+        <div class="about-desc">
+            أ/ محمد سعيد يونس (الدرعمي)، مدرس لغة عربية بخبرة واسعة في تدريس المرحلتين الإعدادية والثانوية. يتميز بأسلوب شرح مبسط، متابعة دقيقة للطلاب، وحرص دائم على تحقيق أفضل النتائج الأكاديمية. يواكب أحدث طرق التدريس ويهتم بتنمية مهارات الطلاب اللغوية والفكرية.
+        </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section id="why">
+        <div class="section-title">
+            <i class="fas fa-star"></i>
+            لماذا نحن
+        </div>
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-award"></i>
+                <div class="feature-title">خبرة قوية</div>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-user-check"></i>
+                <div class="feature-title">متابعة دقيقة</div>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-check-circle"></i>
+                <div class="feature-title">نتائج مضمونة</div>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-lightbulb"></i>
+                <div class="feature-title">شرح مبسط</div>
+            </div>
+        </div>
+    </section>
+    <!-- Booking Section -->
+    <section id="booking">
+        <div class="section-title">
+            <i class="fas fa-calendar-check"></i>
+            الحجز
+        </div>
+        <form class="booking-form" id="bookingForm" autocomplete="off">
+            <div>
+                <label for="name">الاسم الثلاثي</label>
+                <input type="text" id="name" name="name" required placeholder="اكتب اسمك الثلاثي">
+            </div>
+            <div>
+                <label for="phone">رقم الهاتف</label>
+                <input type="tel" id="phone" name="phone" required pattern="^01[0-9]{9}$" placeholder="مثال: 01012345678">
+            </div>
+            <div>
+                <label for="grade">المرحلة الدراسية</label>
+                <select id="grade" name="grade" required>
+                    <option value="" disabled selected>اختر المرحلة</option>
+                    <option>الصف الأول الإعدادي</option>
+                    <option>الصف الثاني الإعدادي</option>
+                    <option>الصف الثالث الإعدادي</option>
+                    <option>الصف الأول الثانوي</option>
+                    <option>الصف الثاني الثانوي</option>
+                    <option>الصف الثالث الثانوي</option>
+                </select>
+            </div>
+            <div>
+                <label for="center">المركز</label>
+                <select id="center" name="center" required>
+                    <option value="" disabled selected>اختر المركز</option>
+                    <option>الكيان (القلج)</option>
+                    <option>الدرعمي (الخانكة)</option>
+                    <option>النخبة (العبور)</option>
+                </select>
+            </div>
+            <button type="submit">احجز الآن</button>
+        </form>
+    </section>
+    <!-- Contact Us -->
+    <section id="contact">
+        <div class="section-title">
+            <i class="fas fa-envelope"></i>
+            تواصل معنا
+        </div>
+        <div class="socials">
+            <a href="https://wa.me/201068685494" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/eldar3amy" target="_blank" aria-label="انستجرام"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/channel/UC5adSKDEHn_B_2vxKnVnxNA?si=ktbCYqcX93unYjBU" target="_blank" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/share/1BdnyJ8d1z/" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <span class="footer-logo">أ/ محمد سعيد يونس (الدرعمي)</span>
+        <div class="footer-tagline">رحلتك للتفوق تبدأ من هنا</div>
+        <div class="footer-links">
+            <a href="#home">الرئيسية</a>
+            <a href="#about">عن المدرس</a>
+            <a href="#why">لماذا نحن</a>
+            <a href="#booking">الحجز</a>
+            <a href="#contact">تواصل معنا</a>
+        </div>
+        <div class="copyright">
+            جميع الحقوق محفوظة © <span id="year"></span> أ/ محمد سعيد يونس (الدرعمي).
+        </div>
+    </footer>
+    <script>
+        // Hamburger menu
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('open');
+        }
+        // Close menu on link click (mobile)
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth <= 600) {
+                    document.getElementById('nav').classList.remove('open');
+                }
+            });
+        });
+        // Smooth scroll for navigation
+        function scrollToSection(e, id) {
+            e.preventDefault();
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if(href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if(target) target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['home', 'about', 'why', 'booking', 'contact'];
+            let scrollPos = window.scrollY + 120;
+            for(let id of sections) {
+                const sec = document.getElementById(id);
+                if(sec && sec.offsetTop <= scrollPos) {
+                    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                    const navLink = document.querySelector(`nav a[href="#${id}"]`);
+                    if(navLink) navLink.classList.add('active');
+                }
+            }
+        });
+        // Booking form WhatsApp redirection
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const grade = document.getElementById('grade').value;
+            const center = document.getElementById('center').value;
+            if(!name || !phone || !grade || !center) return;
+            const msg = `،  الحجز. اسمي: ${encodeURIComponent(name)}, رقم الهاتف: ${encodeURIComponent(phone)}, المرحلة الدراسية: ${encodeURIComponent(grade)}, المركز: ${encodeURIComponent(center)}`;
+            const url = `https://wa.me/201068685494?text=${msg}`;
+            window.open(url, '_blank');
+        });
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
